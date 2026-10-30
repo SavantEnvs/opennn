@@ -1,0 +1,9 @@
+project: savantenvs/opennn
+target: network_json_fuzz
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/network_json_fuzz/testsuite
+cmds:
+  - cmd: /mayhem/network_json_fuzz
+    libfuzzer: true
+    timeout: 5

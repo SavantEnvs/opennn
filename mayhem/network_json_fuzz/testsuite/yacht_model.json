@@ -1,0 +1,112 @@
+{
+  "Network": {
+    "Task": "Approximation",
+    "TrainingActivationRecomputation": false,
+    "Inputs": {
+      "InputsNumber": 6,
+      "Input": []
+    },
+    "Layers": {
+      "LayersNumber": 5,
+      "Items": [
+        {
+          "Scaling": {
+            "Label": "scaling_layer",
+            "InputDimensions": "6 ",
+            "OutputDimensions": "6 ",
+            "Trainable": false,
+            "Means": "0 0 0 0 0 0 ",
+            "StandardDeviations": "1 1 1 1 1 1 ",
+            "Minimums": "-1 -1 -1 -1 -1 -1 ",
+            "Maximums": "1 1 1 1 1 1 ",
+            "Scalers": "MeanStandardDeviation MeanStandardDeviation MeanStandardDeviation MeanStandardDeviation MeanStandardDeviation MeanStandardDeviation",
+            "MinRange": -1,
+            "MaxRange": 1
+          }
+        },
+        {
+          "Dense": {
+            "Label": "dense_layer_1",
+            "InputDimensions": "6 ",
+            "OutputDimensions": "3 ",
+            "Trainable": true,
+            "BatchNormalization": false,
+            "UseBias": true,
+            "Activation": "Tanh",
+            "Gated": false,
+            "TransposedInference": false
+          }
+        },
+        {
+          "Dense": {
+            "Label": "approximation_layer",
+            "InputDimensions": "3 ",
+            "OutputDimensions": "1 ",
+            "Trainable": true,
+            "BatchNormalization": false,
+            "UseBias": true,
+            "Activation": "Identity",
+            "Gated": false,
+            "TransposedInference": false
+          }
+        },
+        {
+          "Unscaling": {
+            "Label": "unscaling_layer",
+            "InputDimensions": "1 ",
+            "OutputDimensions": "1 ",
+            "Trainable": false,
+            "MinRange": -1,
+            "MaxRange": 1,
+            "Neurons": [
+              {
+                "Descriptives": "-1 1 0 1",
+                "Scaler": "MinimumMaximum"
+              }
+            ]
+          }
+        },
+        {
+          "Clamping": {
+            "Label": "clamping_layer",
+            "InputDimensions": "1 ",
+            "OutputDimensions": "1 ",
+            "Trainable": false,
+            "LowerBounds": "-3.40282347e+38 ",
+            "UpperBounds": "3.40282347e+38 ",
+            "ClampingMethod": "Clamping"
+          }
+        }
+      ],
+      "SourceLayers": {
+        "SourceLayer": [
+          {
+            "LayerIndex": 0,
+            "Text": "-1"
+          },
+          {
+            "LayerIndex": 1,
+            "Text": "0"
+          },
+          {
+            "LayerIndex": 2,
+            "Text": "1"
+          },
+          {
+            "LayerIndex": 3,
+            "Text": "2"
+          },
+          {
+            "LayerIndex": 4,
+            "Text": "3"
+          }
+        ]
+      },
+      "TiedWeights": []
+    },
+    "Outputs": {
+      "OutputsNumber": 1,
+      "Output": []
+    }
+  }
+}

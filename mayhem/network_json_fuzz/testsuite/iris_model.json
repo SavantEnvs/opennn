@@ -1,0 +1,77 @@
+{
+  "Network": {
+    "Task": "Classification",
+    "TrainingActivationRecomputation": false,
+    "Inputs": {
+      "InputsNumber": 4,
+      "Input": []
+    },
+    "Layers": {
+      "LayersNumber": 3,
+      "Items": [
+        {
+          "Scaling": {
+            "Label": "scaling_layer",
+            "InputDimensions": "4 ",
+            "OutputDimensions": "4 ",
+            "Trainable": false,
+            "Means": "0 0 0 0 ",
+            "StandardDeviations": "1 1 1 1 ",
+            "Minimums": "-1 -1 -1 -1 ",
+            "Maximums": "1 1 1 1 ",
+            "Scalers": "MeanStandardDeviation MeanStandardDeviation MeanStandardDeviation MeanStandardDeviation",
+            "MinRange": -1,
+            "MaxRange": 1
+          }
+        },
+        {
+          "Dense": {
+            "Label": "dense_layer_1",
+            "InputDimensions": "4 ",
+            "OutputDimensions": "4 ",
+            "Trainable": true,
+            "BatchNormalization": false,
+            "UseBias": true,
+            "Activation": "Tanh",
+            "Gated": false,
+            "TransposedInference": false
+          }
+        },
+        {
+          "Dense": {
+            "Label": "classification_layer",
+            "InputDimensions": "4 ",
+            "OutputDimensions": "3 ",
+            "Trainable": true,
+            "BatchNormalization": false,
+            "UseBias": true,
+            "Activation": "Softmax",
+            "Gated": false,
+            "TransposedInference": false
+          }
+        }
+      ],
+      "SourceLayers": {
+        "SourceLayer": [
+          {
+            "LayerIndex": 0,
+            "Text": "-1"
+          },
+          {
+            "LayerIndex": 1,
+            "Text": "0"
+          },
+          {
+            "LayerIndex": 2,
+            "Text": "1"
+          }
+        ]
+      },
+      "TiedWeights": []
+    },
+    "Outputs": {
+      "OutputsNumber": 3,
+      "Output": []
+    }
+  }
+}
