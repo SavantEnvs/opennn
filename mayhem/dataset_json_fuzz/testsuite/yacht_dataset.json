@@ -1,0 +1,127 @@
+{
+  "Dataset": {
+    "DataSource": {
+      "FileType": "csv",
+      "Path": "/mayhem/examples/yacht_hydrodynamics/data/yacht_hydrodynamics.csv",
+      "Separator": "Semicolon",
+      "HasHeader": true,
+      "HasSamplesId": false,
+      "MissingValuesLabel": "NA",
+      "DecimalSeparator": "Auto",
+      "ThousandsSeparator": "Auto",
+      "Codification": "UTF-8",
+      "StorageMode": "Matrix",
+      "LagsNumber": 0,
+      "StepsAhead": 1,
+      "MultiTarget": false
+    },
+    "Variables": {
+      "VariablesNumber": 7,
+      "Variable": [
+        {
+          "Name": "longitudinal_position_center_of_buoyancy",
+          "Scaler": "MeanStandardDeviation",
+          "Role": "Input",
+          "Type": "Numeric"
+        },
+        {
+          "Name": "prismatic_coefficient",
+          "Scaler": "MeanStandardDeviation",
+          "Role": "Input",
+          "Type": "Numeric"
+        },
+        {
+          "Name": "length_displacement_ratio",
+          "Scaler": "MeanStandardDeviation",
+          "Role": "Input",
+          "Type": "Numeric"
+        },
+        {
+          "Name": "beam_draught_ratio",
+          "Scaler": "MeanStandardDeviation",
+          "Role": "Input",
+          "Type": "Numeric"
+        },
+        {
+          "Name": "length_beam_ratio",
+          "Scaler": "MeanStandardDeviation",
+          "Role": "Input",
+          "Type": "Numeric"
+        },
+        {
+          "Name": "froude_number",
+          "Scaler": "MeanStandardDeviation",
+          "Role": "Input",
+          "Type": "Numeric"
+        },
+        {
+          "Name": "residuary_resistance",
+          "Scaler": "MeanStandardDeviation",
+          "Role": "Target",
+          "Type": "Numeric"
+        }
+      ]
+    },
+    "Samples": {
+      "SamplesNumber": 308,
+      "SampleRoles": "0 0 1 0 1 0 0 2 1 2 2 2 0 0 0 0 2 1 0 2 0 0 0 0 0 2 0 0 0 0 2 0 2 0 2 0 0 0 2 0 2 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 1 0 0 2 2 2 2 2 2 2 1 0 1 0 0 0 0 0 1 0 2 0 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 2 1 1 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 2 0 0 1 0 0 0 0 0 0 1 2 2 1 0 0 0 0 2 1 0 0 1 1 0 0 0 2 0 2 1 0 1 2 0 2 0 1 1 0 0 2 0 0 0 0 2 1 1 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 2 1 0 0 2 0 1 0 1 1 0 2 0 0 0 2 0 2 2 2 1 0 1 0 0 0 0 2 0 2 2 0 1 0 2 0 2 1 2 1 0 0 0 1 2 0 0 2 1 2 1 2 0 0 0 1 0 2 0 0 0 0 0 1 0 0 0 0 0 0 1 0 2 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 2 0 0 1 0 1 0 0 1 1 0 0 0 1 2 0 1 0 0 0 0 2 2 0 1 1 2 1 0 2 2 0 2"
+    },
+    "MissingValues": {
+      "MissingValuesNumber": 0
+    },
+    "PreviewData": {
+      "PreviewSize": 4,
+      "Row": [
+        {
+          "Text": "longitudinal_position_center_of_buoyancy,prismatic_coefficient,length_displacement_ratio,beam_draught_ratio,length_beam_ratio,froude_number,residuary_resistance",
+          "Cells": [
+            "longitudinal_position_center_of_buoyancy",
+            "prismatic_coefficient",
+            "length_displacement_ratio",
+            "beam_draught_ratio",
+            "length_beam_ratio",
+            "froude_number",
+            "residuary_resistance"
+          ]
+        },
+        {
+          "Text": "-2.3,0.568,4.78,3.99,3.17,0.125,0.11",
+          "Cells": [
+            "-2.3",
+            "0.568",
+            "4.78",
+            "3.99",
+            "3.17",
+            "0.125",
+            "0.11"
+          ]
+        },
+        {
+          "Text": "-2.3,0.568,4.78,3.99,3.17,0.150,0.27",
+          "Cells": [
+            "-2.3",
+            "0.568",
+            "4.78",
+            "3.99",
+            "3.17",
+            "0.150",
+            "0.27"
+          ]
+        },
+        {
+          "Text": "-2.3,0.600,4.34,4.23,2.73,0.450,46.66",
+          "Cells": [
+            "-2.3",
+            "0.600",
+            "4.34",
+            "4.23",
+            "2.73",
+            "0.450",
+            "46.66"
+          ]
+        }
+      ]
+    },
+    "Display": true
+  }
+}

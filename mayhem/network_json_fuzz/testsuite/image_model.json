@@ -1,0 +1,129 @@
+{
+  "Network": {
+    "Task": "ImageClassification",
+    "TrainingActivationRecomputation": false,
+    "Inputs": {
+      "InputsNumber": 64,
+      "Input": []
+    },
+    "Layers": {
+      "LayersNumber": 6,
+      "Items": [
+        {
+          "Scaling": {
+            "Label": "scaling_layer",
+            "InputDimensions": "8 8 1 ",
+            "OutputDimensions": "8 8 1 ",
+            "Trainable": false,
+            "Means": "0 ",
+            "StandardDeviations": "1 ",
+            "Minimums": "-1 ",
+            "Maximums": "1 ",
+            "Scalers": "ImageMinMax",
+            "MinRange": -1,
+            "MaxRange": 1
+          }
+        },
+        {
+          "Convolutional": {
+            "Label": "convolutional_layer_1",
+            "InputDimensions": "8 8 1 ",
+            "OutputDimensions": "8 8 2 ",
+            "Trainable": true,
+            "KernelsNumber": 2,
+            "KernelsHeight": 3,
+            "KernelsWidth": 3,
+            "KernelsChannels": 1,
+            "StrideDimensions": "1 1 ",
+            "Convolution": "Same",
+            "BatchNormalization": false,
+            "Residual": false,
+            "Activation": "ReLU"
+          }
+        },
+        {
+          "Pooling": {
+            "Label": "pooling_layer_1",
+            "InputDimensions": "8 8 2 ",
+            "OutputDimensions": "4 4 2 ",
+            "Trainable": true,
+            "PoolHeight": 2,
+            "PoolWidth": 2,
+            "PoolingMethod": "MaxPooling",
+            "ColumnStride": 2,
+            "RowStride": 2,
+            "PaddingHeight": 0,
+            "PaddingWidth": 0
+          }
+        },
+        {
+          "Flatten": {
+            "Label": "flatten_layer",
+            "InputDimensions": "4 4 2 ",
+            "OutputDimensions": "32 ",
+            "Trainable": true
+          }
+        },
+        {
+          "Dense": {
+            "Label": "dense_2d_layer_1",
+            "InputDimensions": "32 ",
+            "OutputDimensions": "32 ",
+            "Trainable": true,
+            "BatchNormalization": false,
+            "UseBias": true,
+            "Activation": "ReLU",
+            "Gated": false,
+            "TransposedInference": false
+          }
+        },
+        {
+          "Dense": {
+            "Label": "classification_layer",
+            "InputDimensions": "32 ",
+            "OutputDimensions": "3 ",
+            "Trainable": true,
+            "BatchNormalization": false,
+            "UseBias": true,
+            "Activation": "Softmax",
+            "Gated": false,
+            "TransposedInference": false
+          }
+        }
+      ],
+      "SourceLayers": {
+        "SourceLayer": [
+          {
+            "LayerIndex": 0,
+            "Text": "-1"
+          },
+          {
+            "LayerIndex": 1,
+            "Text": "0"
+          },
+          {
+            "LayerIndex": 2,
+            "Text": "1"
+          },
+          {
+            "LayerIndex": 3,
+            "Text": "2"
+          },
+          {
+            "LayerIndex": 4,
+            "Text": "3"
+          },
+          {
+            "LayerIndex": 5,
+            "Text": "4"
+          }
+        ]
+      },
+      "TiedWeights": []
+    },
+    "Outputs": {
+      "OutputsNumber": 3,
+      "Output": []
+    }
+  }
+}
